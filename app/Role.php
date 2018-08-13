@@ -10,4 +10,5 @@ class Role extends Model
 //    public function user(){
 //        return $this->hasOne('App\User','role_id','id');
 //    }
+protected $fillable = ['name'];
 }
