@@ -28,7 +28,7 @@
                       <td>{{$user->id}}</td>
                       <td><img height="50" src="{{$user->photo?$user->photo->file:'http://via.placeholder.com/350x150'}}"></td>
                       <td><a href="{{route('admin.users.edit',$user->id)}}">{{$user->name}}</a></td>
-                      <td>{{$user->email}}</td>
+                      <td><a href="">{{$user->email}}</a></td>
                       <td>{{$user->role->name}}</td>
                       <td>
                         {{$user->is_active == 1? 'Active':'Not Active'}}

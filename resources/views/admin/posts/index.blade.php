@@ -24,13 +24,13 @@
                        <td>{{$post->user->name}}</td>
                        <td>{{$post->category?$post->category->name:'Uncategorized'}}</td>
                        <td><img height='50' src="{{$post->photo?$post->photo->file:'http://via.placeholder.com/350x150'}}" alt=""></td>
-                       <td>{{$post->title}}</td>
-                       <td>{{$post->body}}</td>
+                       <td><a href="{{route('admin.posts.edit',$post->id)}}">{{$post->title}}</a></td>
+                       <td>{{str_limit($post->body,30)}}</td>
                        <td>{{$post->created_at->diffForHumans()}}</td>
                        <td>{{$post->updated_at->diffForHumans()}}</td>
                   </tr>
               @endforeach
-               @endif;
+               @endif
           </tbody>
      </table>
     @endsection
