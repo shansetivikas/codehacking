@@ -14,8 +14,8 @@
             <img src="{{$post->photo->file}}" alt="" class="img-responsive">
         </div>
         <div class="col-sm-9">
-        {!! Form::model($post,['method'=>'PATCH','action'=>['AdminPostsController@update', $post->id],'files'=>true]) !!}
-        <div class="form-group">
+            {!! Form::model($post,['method'=>'PATCH','action'=>['AdminPostsController@update', $post->id],'files'=>true]) !!}
+            <div class="form-group">
             {!! Form::label('title','Title:') !!}
             {!! Form::text('title',null,['class'=>'form-control']) !!}
         </div>

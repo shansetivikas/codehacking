@@ -103,7 +103,8 @@ class AdminPostsController extends Controller
             $photo = Photo::create(['file'=>$name]);
             $input['photo_id'] = $photo->id;
 
-        }else{
+        }
+        else{
             $post = Post::findOrFail($id);
             $input['photo_id'] = $post->photo->id;
         }
@@ -127,5 +128,10 @@ class AdminPostsController extends Controller
         $post->delete();
 
         return redirect('admin/posts');
+    }
+
+    public function post($id){
+        $post = Post::findOrFail($id);
+       return view('post',compact('post'));
     }
 }
