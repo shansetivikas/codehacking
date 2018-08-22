@@ -126,15 +126,11 @@ class AdminPostsController extends Controller
         //
         $post = Post::findOrFail($id);
         unlink(public_path().$post->photo->file);
+//        $post->photo()->where('file', $post->photo->file)->first()->delete();
         $post->delete();
 
         return redirect('admin/posts');
     }
 
-    public function post($slug){
-        $post = Post::findBySlugOrFail($slug);
-        $comments = $post->comments()->where('is_active',1)->get();
 
-       return view('post',compact('post','comments'));
-    }
 }
